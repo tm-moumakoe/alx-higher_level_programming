@@ -3,7 +3,7 @@
 
 ## Concepts
 *For this project students are expected to look at this concept:*
-- [Python programming] (https://intranet.alxswe.com/concepts/550)
+- [Python programming](https://intranet.alxswe.com/concepts/550)
 
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/231/48a9fdbd67c84a328a9df9ec8d93b9ac2458ac37721d7d53e51a27fb2bdc5263.jpg)
 
@@ -22,7 +22,7 @@ Enjoy!
 ```
 
 ## Resources
-**Read or wathc**:
+**Read or watch**:
 - [The Python tutorial](https://docs.python.org/3/tutorial/index.html) (only the first three chapters below)
 - [Whetting Your Appetite](https://docs.python.org/3/tutorial/appetite.html)
 - [Using the Python Interpreter](https://docs.python.org/3/tutorial/interpreter.html)
@@ -118,6 +118,7 @@ Namespaces are one honking great idea -- let's do more of those!
 ## Tasks
 ### 0. Run Python file (mandatory)
 Write a Shell script that runs a Python script.
+
 The Python file name will be saved in the environment variable `$PYFILE`
 ```
 guillaume@ubuntu:~/py/0x00$ cat main.py 
@@ -133,3 +134,19 @@ guillaume@ubuntu:~/py/0x00$
 - GitHub repository: `alx-higher_level_programming`
 - Directory: `0x00-python-hello_world`
 - File: `0-run`
+
+### 1. Run inline (mandatory)
+Write a Shell script that runs Python code.
+
+The Python code will be saved in the environment variable `$PYCODE`
+```
+guillaume@ubuntu:~/py/0x00$ export PYCODE='print(f"Best School: {88+10}")'
+guillaume@ubuntu:~/py/0x00$ ./1-run_inline 
+Best School: 98
+guillaume@ubuntu:~/py/0x00$
+```
+**Repo:**
+- GitHub repository: `alx-higher_level_programming`
+- Directory: `0x00-python-hello_world`
+- File: `1-run_inline`
+
