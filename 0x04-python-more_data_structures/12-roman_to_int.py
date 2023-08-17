@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+def r_sub(n_list):
+    n_sub = 0
+    m_list = max(n_list)
+    for n in n_list:
+        if m_list > n:
+            n_sub += n
+    return m_list - n_sub
+
 def roman_to_int(roman_string):
     if (not roman_string) or (not isinstance(roman_string, str)):
         return 0
@@ -18,12 +26,3 @@ def roman_to_int(roman_string):
                 r_last = r_dict.get(ch)
     num += r_sub(n_list)
     return num
-
-def r_sub(n_list):
-    n_sub = 0
-    m_list = max(n_list)
-
-    for n in n_list:
-        if m_list > n:
-            n_sub += n
-    return m_list - n_sub
