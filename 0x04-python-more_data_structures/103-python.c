@@ -57,7 +57,7 @@ void print_python_bytes(PyObject *p)
 	else
 		lim = size + 1;
 
-	for (i = 0; i < limit; i++)
+	for (i = 0; i < lim; i++)
 		if (str[i] >= 0)
 			printf(" %02x", str[i]);
 		else
