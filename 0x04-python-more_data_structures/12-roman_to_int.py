@@ -10,7 +10,8 @@ def r_sub(n_list):
 def roman_to_int(roman_string):
     if (not roman_string) or (not isinstance(roman_string, str)):
         return 0
-    r_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    r_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100,
+            'D': 500, 'M': 1000}
     num = 0
     r_last = 0
     n_list = [0]
