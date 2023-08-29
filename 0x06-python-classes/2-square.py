@@ -4,7 +4,9 @@
 
 
 class Square:
-    """ A class that epresents a Square """
+    """ Represents a Square 
+    Attributes:
+        __size (int): size of a square"""
     def __init__(self, size=0):
         """ Initializes the Sqaure class
         Args:
