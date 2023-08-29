@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 # 2-square.py by TM Moumakoe
-""" Defines a Square """
+""" A module that defines a Square """
 
 
 class Square:
-    """ Represents a Square """
-     def __init__(self, size=0):
+    """ A class that epresents a Square """
+    def __init__(self, size=0):
         """ Initializes the Sqaure class
         Args:
             size (int): size of the square
