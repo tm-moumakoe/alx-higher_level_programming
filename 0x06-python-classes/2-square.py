@@ -4,13 +4,15 @@
 
 
 class Square:
-    """ Represents a Square 
+    """ Represents a Square
+
     Attributes:
-        __size (int): size of a square"""
+        __size (int): size of a Square
+    """
     def __init__(self, size=0):
         """ Initializes the Sqaure class
         Args:
-            size (int): size of the square
+            size (int): size of a Square
         Returns:
             None
         """
