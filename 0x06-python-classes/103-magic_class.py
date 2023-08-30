@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Defines a class MagicClass"""
+# 103-magic_class.py
+"""Defines a MagicClass"""
+import math
 
 
 class MagicClass:
-    import math
     """This represents a circle"""
     def __init__(self, radius=0):
         """Initializes the Magic Class"""
@@ -14,7 +15,7 @@ class MagicClass:
 
     def area(self):
         """Calculaes the area of the circle"""
-        return (self.__radius ** 2) * math.pi
+        return self.__radius ** 2 * math.pi
 
     def circumference(self):
         """Calculates the circumference of the circle"""
