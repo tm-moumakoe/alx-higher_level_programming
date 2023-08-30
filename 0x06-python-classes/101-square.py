@@ -1,23 +1,23 @@
 #!/usr/bin/python3
 # 101-square.py by TM Moumakoe
 """Square module definition.
-This module defines a simple Square class
+This module defines a simple `Square` class
 """
 
 
 class Square:
-    """A simple Square class
+    """A simple ``Square`` class
     Attributes:
-        size (`int`): The size of the Square.
+        size (`int`): The size of the ``Square``.
     """
     def __init__(self, size=0, position=(0, 0)):
-        """Constructs a Square object
+        """Constructs a ``Square`` objet
         Args:
-            size (int): The size of the Square.
+            size (`int`): The size of the ``Square``.
                 The default value is 0.
         Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size < 0
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
         """
         self.size = size
         self.position = position
@@ -30,15 +30,16 @@ class Square:
             res += (line + "\n") * (self.size - 1)
             res += line
         return res
+
     @property
     def size(self):
         """
         Args:
-            size (int): The size of the Square.
+            size (`int`): The size of the ``Square``.
                 The default value is 0.
         Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size < 0
+            TypeError: If ``size`` is not an integer.
+            ValueError: If ``size`` < 0
         """
         return self._Square__size
 
@@ -55,10 +56,10 @@ class Square:
     def position(self):
         """
         Args:
-            position (:obj: tuple of int): The position to start to
-                print the Square.
+            position (:obj: `tuple` of `int`): The position to start to
+                print the ``Square``.
         Raises:
-            TypeError: If position is not a tuple of 2 integers
+            TypeError: If ``position`` is not a tuple of 2 integers
         """
         return self._Square__position
 
@@ -70,12 +71,12 @@ class Square:
             self._Square__position = position
 
     def area(self):
-        """Computes the area of the Square.
+        """Computes the area of the ``Square``.
         Returns:
-            int: The area of the Square.
+            int: The area of the ``Square``.
         """
         return self.size ** 2
 
     def my_print(self):
-        """Prints a Square filled with '#'"""
+        """Prints a ``Square`` filled with '#'"""
         print(self)
