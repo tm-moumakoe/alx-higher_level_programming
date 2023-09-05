@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 101-nqueens.py
+# 101-nqueens.py by TM Moumakoe
 """Solves the N-queens puzzle.
 Determines all possible solutions to placing N
 N non-attacking queens on an NxN chessboard.
@@ -16,31 +16,18 @@ queen must be placed on the chessboard.
 import sys
 
 
-def init_(n):
+def init_board(n):
     """Initialize an `n`x`n` sized chessboard with 0's."""
     board = []
     [board.append([]) for i in range(n)]
     [row.append(' ') for i in range(n) for row in board]
     return (board)
 
-
-def dpcpy(board):
+def board_deepcopy(board):
     """Return a deepcopy of a chessboard."""
     if isinstance(board, list):
-        return list(map(dpcpy, board))
+        return list(map(board_deepcopy, board))
     return (board)
-
-
-def gsol(board):
-    """Return the list of lists representation of a solved chessboard."""
-    solution = []
-    for r in range(len(board)):
-        for c in range(len(board)):
-            if board[r][c] == "Q":
-                solution.append([r, c])
-                break
-    return (solution)
-
 
 def xout(board, row, col):
     """X out spots on a chessboard.
@@ -92,8 +79,17 @@ def xout(board, row, col):
         board[r][c] = "x"
         c -= 1
 
+def get_solution(board):
+    """Return the list of lists representation of a solved chessboard."""
+    solution = []
+    for r in range(len(board)):
+        for c in range(len(board)):
+            if board[r][c] == "Q":
+                solution.append([r, c])
+                break
+    return (solution)
 
-def rsolve(board, row, queens, solutions):
+def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
     Args:
         board (list): The current working chessboard.
@@ -104,19 +100,16 @@ def rsolve(board, row, queens, solutions):
         solutions
     """
     if queens == len(board):
-        solutions.append(gsol(board))
+        solutions.append(get_solution(board))
         return (solutions)
 
     for c in range(len(board)):
         if board[row][c] == " ":
-            tmp_board = dpcpy(board)
+            tmp_board = board_deepcopy(board)
             tmp_board[row][c] = "Q"
             xout(tmp_board, row, c)
-            solutions = rsolve(tmp_board, row + 1,
-                                        queens + 1, solutions)
-
+            solutions = recursive_solve(tmp_board, row + 1, queens + 1, solutions)
     return (solutions)
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -129,7 +122,7 @@ if __name__ == "__main__":
         print("N must be at least 4")
         sys.exit(1)
 
-    board = init_(int(sys.argv[1]))
-    solutions = rsolve(board, 0, 0, [])
+    board = init_board(int(sys.argv[1]))
+    solutions = recursive_solve(board, 0, 0, [])
     for sol in solutions:
         print(sol)
