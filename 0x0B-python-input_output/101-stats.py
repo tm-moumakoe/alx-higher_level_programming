@@ -1,5 +1,11 @@
 #!/usr/bin/python3
-"""Reads from stdin line by line and computes metrics."""
+"""Reads from stdin line by line and computes metrics.
+
+After every ten lines or the input of a keyboard interruption (CTRL + C),
+prints the following statistics:
+    - Total file size up to that point.
+    - Count of read status codes up to that point.
+"""
 
 
 def print_stats(size, status_codes):
@@ -13,8 +19,8 @@ if __name__ == "__main__":
     import sys
 
 
-    status_codes = {}
     valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+    status_codes = {}
     size = 0
     count = 0
 
