@@ -1,6 +1,8 @@
 # 0x0B. Python - Input/Output
 Facilitator: Guillaume
+
 Author: Thapelo M Moumakoe
+
 Language: `Python`
 
 ## Resources
