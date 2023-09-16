@@ -1,7 +1,10 @@
 # 0x0C. Python - Almost a circle
 Facilitator: Guillaume
+
 Author: Thapelo M Moumakoe
+
 Language: `Python`
+
 Subject: `OOP`
 
 ## Background Context
