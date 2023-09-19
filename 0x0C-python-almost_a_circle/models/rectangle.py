@@ -16,7 +16,7 @@ class Rectangle(Base):
     def __str__(self):
         """Overrides the __str__ method"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y}" \
-                + f" - {self.width}/{self.height}"
+            + f" - {self.width}/{self.height}"
 
     @property
     def width(self):
