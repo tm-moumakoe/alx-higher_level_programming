@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""Prints the State object with the name as argument from the database"""
+"""Prints all the City objects from the database hbtn_0e_14_usa"""
 import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 
 
 if __name__ == "__main__":
@@ -12,8 +13,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    inst = session.query(State).filter(State.name == (sys.argv[4],))
-    try:
-        print(inst[0].id)
-    except IndexError:
-        print("Not found")
+    for inst in (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id)):
+        print(inst[0] + ": (" + str(inst[1]) + ") " + inst[2])

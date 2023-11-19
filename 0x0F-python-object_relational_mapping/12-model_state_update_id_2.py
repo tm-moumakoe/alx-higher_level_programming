@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Prints the State object with the name as argument from the database"""
+"""Changes thename of a State object from the database hbtn_0e_6_usa"""
 import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
@@ -12,8 +12,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    inst = session.query(State).filter(State.name == (sys.argv[4],))
-    try:
-        print(inst[0].id)
-    except IndexError:
-        print("Not found")
+    new_inst = session.query(State).filter_by(id=2).first()
+    new_inst.name = 'New Mexico'
+    session.commit()

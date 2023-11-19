@@ -12,8 +12,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    inst = session.query(State).filter(State.name == (sys.argv[4],))
-    try:
-        print(inst[0].id)
-    except IndexError:
-        print("Not found")
+    new_st = State(name='Louisiana')
+    session.add(new_st)
+    new_inst = session.query(State).filter_by(name='Louisiana').first()
+    print(new_inst.id)
+    session.commit()
